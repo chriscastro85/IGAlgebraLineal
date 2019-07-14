@@ -90,5 +90,32 @@ public class IGVecR4 {
         double a = Math.pow(a1.x, 2) + Math.pow(a1.y,2) + Math.pow(a1.z,2) + Math.pow(a1.w,2);
         return Math.sqrt(a);
     }
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+    public double getZ() {
+        return z;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
+    }
+    public double getW() {
+        return w;
+    }
+
+    public void setW(double w) {
+        this.w = w;
+    }
 
 }
