@@ -1,5 +1,7 @@
 package edu.ujcv.progra2.vector;
 
+import edu.ujcv.progra2.matriz.IGMatR3;
+
 public class IGVecR3 {
     private double x;
     private double y;
@@ -13,6 +15,11 @@ public class IGVecR3 {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+    public IGVecR3(IGVecR3 b){
+        this.x = b.x;
+        this.y = b.y;
+        this.z = b.z;
     }
 
     public IGVecR3 suma(IGVecR3 b){

@@ -3,7 +3,7 @@ import edu.ujcv.progra2.utility.LectorDeTecladoValidado;
 import edu.ujcv.progra2.vector.IGVecR2;
 import edu.ujcv.progra2.vector.IGVecR3;
 import edu.ujcv.progra2.vector.IGVecR4;
-import edu.ujcv.progra2.matriz;
+
 import java.util.Scanner;
 public class Main {
 
@@ -15,9 +15,9 @@ public class Main {
         int Rep;
         do{
             System.out.println("que desea calcular");
-            System.out.println("Presione 1 para calcular vectores");
-            System.out.println("Presione 2 para calcular matrices");
-            System.out.println("presione 3 para salir del programa");
+            System.out.println("1 - calcular vectores");
+            System.out.println(" 2 -  calcular matrices");
+            System.out.println(" 3 - para salir del programa");
             int rep = sc.nextInt();
             Rep = rep;
 
@@ -38,11 +38,11 @@ public class Main {
 
                         IGVecR2 a = new IGVecR2();
                         System.out.println("ingrese los componentes del primer vector");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         IGVecR2 b = new IGVecR2();
                         System.out.println("ingrese las componentes del segundo vector");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         IGVecR2 x = a.suma(b);
                         IGVecR2 y = a.suma(b);
@@ -54,11 +54,11 @@ public class Main {
                     if (operaVec == 2) {
                         IGVecR2 a = new IGVecR2();
                         System.out.println("ingrese las componentes del primer vector");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         IGVecR2 b = new IGVecR2();
                         System.out.println("ingrese las componentes del segundo vector");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         IGVecR2 x = a.resta(b);
                         IGVecR2 y = a.resta(b);
@@ -70,7 +70,7 @@ public class Main {
                     if (operaVec == 3) {
                         IGVecR2 a = new IGVecR2();
                         System.out.println("Ingrese X1 y Y1");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         System.out.println("ingrese Alpha");
                         double alpha = sc.nextDouble();
@@ -80,11 +80,11 @@ public class Main {
                     if (operaVec == 4) {
                         IGVecR2 a = new IGVecR2();
                         System.out.println("ingrese las componentes del  primer vector");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         IGVecR2 b = new IGVecR2();
                         System.out.println("ingrese los componentes del segundo vector");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         double x = a.productoPunto(b);
                         double y = a.productoPunto(b);
@@ -95,11 +95,11 @@ public class Main {
                     if (operaVec == 5) {
                         IGVecR2 a = new IGVecR2();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         IGVecR2 b = new IGVecR2();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         double x = a.magnitud(b);
                         double y = a.magnitud(b);
@@ -111,11 +111,11 @@ public class Main {
                     if (operaVec == 6) {
                         IGVecR2 a = new IGVecR2();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         IGVecR2 b = new IGVecR2();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         double x = a.angulo(b);
                         double y = a.angulo(b);
@@ -140,12 +140,12 @@ public class Main {
                     if (operaVec == 1) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese los componentes");
-                        a.setx(sc.nextDouble());
+                        a.setX (sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las componentes");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         IGVecR3 x = a.suma(b);
@@ -160,12 +160,12 @@ public class Main {
                     if (operaVec == 2) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         IGVecR3 x = a.resta(b);
@@ -179,7 +179,7 @@ public class Main {
                     if (operaVec == 3) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("Ingrese X1 y Y1 y Z1");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         System.out.println("ingrese Alpha");
@@ -191,12 +191,12 @@ public class Main {
                     if (operaVec == 4) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         double x = a.productoPunto(b);
@@ -210,12 +210,12 @@ public class Main {
                     if (operaVec == 5) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese los componentes");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las componentes");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         IGVecR3 x = a.productoCruz(b);
@@ -229,12 +229,12 @@ public class Main {
                     if (operaVec == 6) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         double x = a.magnitud(b);
@@ -248,12 +248,12 @@ public class Main {
                     if (operaVec == 7) {
                         IGVecR3 a = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         IGVecR3 b = new IGVecR3();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         double x = a.angulo(b);
@@ -282,13 +282,13 @@ public class Main {
                     if (operaVec == 1) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("ingrese los componentes");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
                         IGVecR4 b = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setw(sc.nextDouble());
@@ -305,13 +305,13 @@ public class Main {
                     if (operaVec == 2) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
                         IGVecR4 b = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setw(sc.nextDouble());
@@ -328,7 +328,7 @@ public class Main {
                     if (operaVec == 3) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("Ingrese X1 y Y1 y Z1 y W1");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
@@ -340,13 +340,13 @@ public class Main {
                     if (operaVec == 4) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
                         IGVecR4 b = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setw(sc.nextDouble());
@@ -363,13 +363,13 @@ public class Main {
                     if (operaVec == 5) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
                         IGVecR4 b = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setw(sc.nextDouble());
@@ -386,13 +386,13 @@ public class Main {
                     if (operaVec == 6) {
                         IGVecR4 a = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        a.setx(sc.nextDouble());
+                        a.setX(sc.nextDouble());
                         a.setY(sc.nextDouble());
                         a.setZ(sc.nextDouble());
                         a.setw(sc.nextDouble());
                         IGVecR4 b = new IGVecR4();
                         System.out.println("ingrese las variables");
-                        b.setx(sc.nextDouble());
+                        b.setX(sc.nextDouble());
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setw(sc.nextDouble());

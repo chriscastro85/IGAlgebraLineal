@@ -17,9 +17,9 @@ public class IGMatR3 {
     }
 
     public IGMatR3(IGVecR3 colX, IGVecR3 colY, IGVecR3 colz){
-        this.colX = new IGVecR2 (colX);
-        this.colY = new IGVecR2 (colY);
-
+        this.colX = new IGVecR3 (colX);
+        this.colY = new IGVecR3 (colY);
+        this.colz = new IGVecR3(colz);
 
     }
 
