@@ -43,7 +43,7 @@ public class IGVecR3 {
 
     //producto.
     public  IGVecR3 escalarPorVector(double alpha){
-        //TODO: implementar
+
         return new IGVecR3();
     }
 

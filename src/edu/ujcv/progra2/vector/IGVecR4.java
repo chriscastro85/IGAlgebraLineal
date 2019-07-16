@@ -12,7 +12,7 @@ public class IGVecR4 {
         this.z = 0;
         this.z = 0;
     }
-    public IGVecR4(double x, double y, double z, double w){
+    public IGVecR4 (double x, double y, double z, double w){
         this.x = x;
         this.y = y;
         this.z = z;
@@ -43,7 +43,14 @@ public class IGVecR4 {
         a1.w = w - (b.w);
         return a1;
     }
-
+    public  IGVecR4 escalarPorVector(double alpha){
+        IGVecR4 Resul = new IGVecR4();
+        Resul.x = x * alpha ;
+        Resul.y = y * alpha  ;
+        Resul.z = z * alpha ;
+        Resul.w = w * alpha ;
+        return Resul;
+    }
 
 
     public double productoPunto(IGVecR4 b){
