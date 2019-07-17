@@ -1,112 +1,88 @@
 package edu.ujcv.progra2.vector;
 
 public class IGVecR2 {
+    /*
+    Privado los datos
+    Un escalar que represente 'x' y 'y' los componentes del vector
+    Publico los constructores por defecto, copia, y conveniencia. recuerden a bob
+    Publico accesoras y mutadoras
+    Publico interfase
+    this es el vector a
+    c.x = a.x + b.x
+    c.y = a.y + b.y
+    */
+    private double x;
+    private double y;
 
-        private double y;
-        private double x;
+    public IGVecR2(){
+        this.x=0;
+        this.y=0;
+    }
+    public IGVecR2(double x, double y){
+        this.x=x;
+        this.y=y;
+    }
+    public IGVecR2(IGVecR2 b){
+        this.x=b.x;
+        this.y=b.y;
+    }
 
-        public IGVecR2(){
-            this.x = 0;
-            this.y = 0;
-        }
-        public IGVecR2(double x, double y){
-            this.x = x;
-            this.y = y;
-        }
-        public IGVecR2(edu.ujcv.progra2.vector.IGVecR2 b){
-            this.x = b.x;
-            this.y = b.y;
-        }
-
-    //privado los datos
-    // un escalar que represente 'x' y 'y' los componentes del vector
-
-
-    // publico los constructores por defecto, copia, y conveniencia. recuerden a bob
-
-
-    // publico accesoras y mutadoras
-
-    //publico interfase
-
-    //this es el vector a
-    // c.x = a.x + b.x
-    // c.y = a.y + b.y
     public IGVecR2 suma(IGVecR2 b){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = x + b.x;
-        a1.y = y + b.y;
-        return a1;
-
+        IGVecR2 r=new IGVecR2();
+        r.x=x+b.x;
+        r.y=y+b.y;
+        return r;
     }
 
     public IGVecR2 resta(IGVecR2 b){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = x - (b.x);
-        a1.y = y - (b.y);
-        return a1;
-
+        IGVecR2 r=new IGVecR2();
+        r.x=x-b.x;
+        r.y=y-b.y;
+        return r;
     }
 
-    //producto.
     public  IGVecR2 escalarPorVector(double alpha){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = alpha * x;
-        a1.y = alpha *y;
-        return a1;
+        IGVecR2 r = new IGVecR2();
+        r.x=alpha*x;
+        r.y=alpha*y;
+        return r;
     }
 
     public double productoPunto(IGVecR2 b){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        double a = a1.x + a1.y;
-        return a;
-    }
-
-
-    // no esta definido en R2.!!!!!
-    //public IGVecR2 productoCruz(IGVecR2 b){
-
-    //}
-
-
-
-    public double angulo(IGVecR2 b){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        double a = a1.x + a1.y;
-        double c = Math.sqrt(((Math.pow(b.x,2)+Math.pow(b.y,2))));
-        double f = Math.sqrt(((Math.pow(x,2)+Math.pow(y,2))));
-        double d = Math.toDegrees(Math.acos((a/(c*f))));
-
-        return d;
+        IGVecR2 r = new IGVecR2();
+        r.x=x*b.x;
+        r.y=y*b.y;
+        double ret=r.x+r.y;
+        return ret;
     }
 
     public double magnitud(IGVecR2 b){
-        IGVecR2 a1 = new IGVecR2();
-        a1.x = (b.x) - x;
-        a1.y = (b.y) - y;
-        double a = Math.pow(a1.x, 2) + Math.pow(a1.y,2);
-        return Math.sqrt(a);
-
+        return  Math.sqrt((Math.pow(b.x,2)+ Math.pow(b.y,2)));
     }
-    public double getX() {
+
+    public double magnitud(){
+        return Math.sqrt((Math.pow(x,2)+Math.pow(y,2)));
+    }
+
+    public double angulo(IGVecR2 a, IGVecR2 b){
+        double r;
+        r = Math.acos(a.productoPunto(b)/(magnitud(a)*magnitud(b)));
+        return Math.toDegrees(r);
+    }
+
+    public double getX (){
         return x;
     }
 
-    public void setX(double x) {
+    public void setX (double x){
         this.x = x;
     }
 
-
-    public double getY() {
+    public double getY (){
         return y;
     }
 
-    public void setY(double y) {
+    public void setY (double y){
         this.y = y;
     }
-
 }

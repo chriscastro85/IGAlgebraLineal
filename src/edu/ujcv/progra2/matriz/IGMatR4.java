@@ -54,22 +54,22 @@ public class IGMatR4 {
         r.col1.setX(this.col1.getX() * alpha);
         r.col1.setY(this.col1.getY() * alpha);
         r.col1.setZ(this.col1.getZ() * alpha);
-        r.col1.setA(this.col1.getA() * alpha);
+        r.col1.setW(this.col1.getW() * alpha);
 
         r.col2.setX(this.col2.getX() * alpha);
         r.col2.setY(this.col2.getY() * alpha);
         r.col2.setZ(this.col2.getZ() * alpha);
-        r.col2.setA(this.col2.getA() * alpha);
+        r.col2.setW(this.col2.getW() * alpha);
 
         r.col3.setX(this.col3.getX() * alpha);
         r.col3.setY(this.col3.getY() * alpha);
         r.col3.setZ(this.col3.getZ() * alpha);
-        r.col3.setA(this.col3.getA() * alpha);
+        r.col3.setW(this.col3.getW() * alpha);
 
         r.col4.setX(this.col4.getX() * alpha);
         r.col4.setY(this.col4.getY() * alpha);
         r.col4.setZ(this.col4.getZ() * alpha);
-        r.col4.setA(this.col4.getA() * alpha);
+        r.col4.setW(this.col4.getW() * alpha);
 
         return  r;
     }
@@ -79,7 +79,7 @@ public class IGMatR4 {
         r.setX(v.productoPunto(this.getF1()));
         r.setY(v.productoPunto(this.getF2()));
         r.setZ(v.productoPunto(this.getF3()));
-        r.setA(v.productoPunto(this.getF4()));
+        r.setW(v.productoPunto(this.getF4()));
         return r;
     }
 
@@ -102,7 +102,7 @@ public class IGMatR4 {
         this.col1.setX(F1.getX());
         this.col2.setX(F1.getY());
         this.col3.setX(F1.getZ());
-        this.col4.setX(F1.getA());
+        this.col4.setX(F1.getW());
     }
 
     public IGVecR4 getF2(){
@@ -114,8 +114,8 @@ public class IGMatR4 {
         this.col1.setY(F2.getX());
         this.col2.setY(F2.getY());
         this.col3.setY(F2.getZ());
-        this.col4.setY(F2.getA());
-    }
+        this.col4.setY(F2.getW());
+}
 
     public IGVecR4 getF3(){
         IGVecR4 retval = new IGVecR4(col1.getZ(),col2.getZ(),col3.getZ(),col4.getZ());
@@ -130,15 +130,15 @@ public class IGMatR4 {
     }
 
     public IGVecR4 getF4(){
-        IGVecR4 r = new IGVecR4(col1.getA(),col2.getA(),col3.getA(),col4.getA());
+        IGVecR4 r = new IGVecR4(col1.getW(),col2.getW(),col3.getW(),col4.getW());
         return r;
     }
 
     public void setF4 (IGVecR4 F4){
-        this.col1.setA(F4.getX());
-        this.col2.setA(F4.getY());
-        this.col3.setA(F4.getZ());
-        this.col4.setA(F4.getZ());
+        this.col1.setW(F4.getX());
+        this.col2.setW(F4.getY());
+        this.col3.setW(F4.getZ());
+        this.col4.setW(F4.getZ());
     }
 
     public IGVecR4 getCol1() {

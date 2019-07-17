@@ -1,119 +1,100 @@
 package edu.ujcv.progra2.vector;
 
-import edu.ujcv.progra2.matriz.IGMatR3;
-
 public class IGVecR3 {
-    private double x;
-    private double y;
-    private double z;
+
+    double x;
+    double y;
+    double z;
+
     public IGVecR3(){
         this.x = 0;
         this.y = 0;
         this.z = 0;
     }
-    public IGVecR3(double x, double y, double z){
+
+    public IGVecR3 (double x, double y, double z){
         this.x = x;
         this.y = y;
         this.z = z;
     }
-    public IGVecR3(IGVecR3 b){
+
+    public IGVecR3 (IGVecR3 b){
         this.x = b.x;
         this.y = b.y;
         this.z = b.z;
     }
 
     public IGVecR3 suma(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = x + b.x;
-        a1.y = y + b.y;
-        a1.z = z + b.z;
-        return a1;
-
-
+        IGVecR3 r = new IGVecR3();
+        r.x = x + b.x;
+        r.y = y + b.y;
+        r.z = z + b.z;
+        return r;
     }
 
     public IGVecR3 resta(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = x - (b.x);
-        a1.y = y - (b.y);
-        a1.z = z - (b.z);
-        return a1;
-
+        IGVecR3 r = new IGVecR3();
+        r.x = x - b.x;
+        r.y = y - b.y;
+        r.z = z - b.z;
+        return r;
     }
 
-    //producto.
     public  IGVecR3 escalarPorVector(double alpha){
-
-        return new IGVecR3();
+        IGVecR3 r = new IGVecR3();
+        r.x = alpha * x;
+        r.y = alpha * y;
+        r.z = alpha * z;
+        return r;
     }
 
     public double productoPunto(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        a1.z = z * b.z;
-        double a = a1.x + a1.y + a1.z ;
-        return a;
-
+        IGVecR3 r = new IGVecR3();
+        r.x = x * b.x;
+        r.y = y * b.y;
+        r.z = z * b.z;
+        double ret = r.x + r.y +r.z;
+        return ret;
     }
-
-
 
     public IGVecR3 productoCruz(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = (b.z*y)-(b.y*z);
-        a1.y = (b.x*z)-(b.z*x);
-        a1.z = (b.y*x)-(b.x*y);
-        return a1;
-
+        IGVecR3 r = new IGVecR3();
+        r.x = (y * b.z) - (z * b.y);
+        r.y = (x * b.z) - (z * b.x);
+        r.z = (x * b.y) - (y * b.x);
+        return r;
     }
-
-
-    public double determinante(){
-        //TODO: implementar
-        return 0.0;
-    }
-
-    public double angulo(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        a1.z = z * b.z;
-        double a = a1.x + a1.y + a1.z ;
-        double c = Math.sqrt(((Math.pow(b.x,2)+Math.pow(b.y,2)+Math.pow(b.z,2))));
-        double f = Math.sqrt(((Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2))));
-        double d = Math.acos((a/(c*f)));
-
-        return d;
-
-    }
-
     public double magnitud(IGVecR3 b){
-        IGVecR3 a1 = new IGVecR3();
-        a1.x = (b.x) - x;
-        a1.y = (b.y) - y;
-        a1.z = (b.z) - z;
-        double a = Math.pow(a1.x, 2) + Math.pow(a1.y,2) + Math.pow(a1.z,2);
-        return Math.sqrt(a);
+        return  Math.sqrt((Math.pow(b.x,2) + Math.pow(b.y,2) + Math.pow(b.z,2)));
     }
-    public double getX() {
+
+    public double angulo(IGVecR3 a, IGVecR3 b){
+        double r;
+        r = Math.acos(a.productoPunto(b)/(magnitud(a)*magnitud(b)));
+        return Math.toDegrees(r);
+    }
+
+    public double getX (){
         return x;
     }
 
-    public void setX(double x) {
+    public void setX (double x){
         this.x = x;
-    }    public double getY() {
+    }
+
+    public double getY (){
         return y;
     }
 
-    public void setY(double y) {
+    public void setY (double y){
         this.y = y;
     }
-    public double getZ() {
+
+    public double getZ (){
         return z;
     }
 
-    public void setZ(double z) {
+    public void setZ (double z) {
         this.z = z;
     }
 
