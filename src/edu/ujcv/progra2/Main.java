@@ -398,15 +398,8 @@ public class Main {
                         b.setY(sc.nextDouble());
                         b.setZ(sc.nextDouble());
                         b.setW(sc.nextDouble());
-                        double x = a.angulo(b);
-                        double y = a.angulo(b);
-                        double z = a.angulo(b);
-                        double w = a.angulo(b);
-                        System.out.println("Su resultado es");
-                        System.out.print(x);
-                        System.out.print("," + y);
-                        System.out.print("," + z);
-                        System.out.println("," + w);
+
+
                     }
                 }
             }
