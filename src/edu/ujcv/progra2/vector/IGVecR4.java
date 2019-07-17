@@ -1,128 +1,110 @@
 package edu.ujcv.progra2.vector;
 
 public class IGVecR4 {
-    private double x;
+
+   private double x;
     private double y;
     private double z;
-    private double w;
+    private double a;
 
     public IGVecR4(){
         this.x = 0;
         this.y = 0;
         this.z = 0;
-        this.z = 0;
+        this.a = 0;
     }
-    public IGVecR4 (double x, double y, double z, double w){
+
+    public IGVecR4(double x, double y, double z, double a){
         this.x = x;
         this.y = y;
         this.z = z;
-        this.w = w;
+        this.a = a;
     }
+
     public IGVecR4(IGVecR4 b){
         this.x = b.x;
         this.y = b.y;
         this.z = b.z;
-        this.w = b.w;
+        this.a = b.a;
     }
-    
-    public IGVecR4 suma(IGVecR4 b){
-        IGVecR4 a1 = new IGVecR4();
-        a1.x = x + b.x;
-        a1.y = y + b.y;
-        a1.z = z + b.z;
-        a1.w = w + b.w;
-        return a1;
 
+    public IGVecR4 suma(IGVecR4 b){
+        IGVecR4 r = new IGVecR4();
+        r.x = x + b.x;
+        r.y = y + b.y;
+        r.z = z + b.z;
+        r.a = a + b.a;
+        return r;
     }
 
     public IGVecR4 resta(IGVecR4 b){
-        IGVecR4 a1 = new IGVecR4();
-        a1.x = x - (b.x);
-        a1.y = y - (b.y);
-        a1.z = z - (b.z);
-        a1.w = w - (b.w);
-        return a1;
-    }
-    public  IGVecR4 escalarPorVector(double alpha){
-        IGVecR4 Resul = new IGVecR4();
-        Resul.x = x * alpha ;
-        Resul.y = y * alpha  ;
-        Resul.z = z * alpha ;
-        Resul.w = w * alpha ;
-        return Resul;
+        IGVecR4 r = new IGVecR4();
+        r.x = x - b.x;
+        r.y = y - b.y;
+        r.z = z - b.z;
+        r.a = a - b.a;
+        return r;
     }
 
+    public  IGVecR4 escalarPorVector(double alpha){
+        IGVecR4 r = new IGVecR4();
+        r.x = alpha * x;
+        r.y = alpha * y;
+        r.z = alpha * z;
+        r.a = alpha * a;
+        return r;
+    }
 
     public double productoPunto(IGVecR4 b){
-        IGVecR4 a1 = new IGVecR4();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        a1.z = z * b.z;
-        a1.w = w * b.w;
-        double a = a1.x + a1.y + a1.z + a1.w;
-        return a;
-
-    }
-
-
-    // no esta definido en R4.!!!!!
-    //public IGVecR4 productoCruz(IGVecR4 b){
-
-    //}
-
-
-
-
-    public double angulo(IGVecR4 b){
-        IGVecR4 a1 = new IGVecR4();
-        a1.x = x * b.x;
-        a1.y = y * b.y;
-        a1.z = z * b.z;
-        a1.w = w * b.w;
-        double a = a1.x + a1.y + a1.z + a1.w;
-        double c = Math.sqrt(((Math.pow(b.x,2)+Math.pow(b.y,2)+Math.pow(b.z,2)+Math.pow(b.w,2))));
-        double f = Math.sqrt(((Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2)+Math.pow(w,2))));
-        double d = Math.acos((a/(c*f)));
-
-        return d;
-
+        IGVecR4 r = new IGVecR4();
+        r.x = x * b.x;
+        r.y = y * b.y;
+        r.z = z * b.z;
+        r.a = a * b.a;
+        double ret = r.x + r.y + r.z + r.a;
+        return ret;
     }
 
     public double magnitud(IGVecR4 b){
-        IGVecR4 a1 = new IGVecR4();
-        a1.x = (b.x) - x;
-        a1.y = (b.y) - y;
-        a1.z = (b.z) - z;
-        a1.w = (b.w) - w;
-        double a = Math.pow(a1.x, 2) + Math.pow(a1.y,2) + Math.pow(a1.z,2) + Math.pow(a1.w,2);
-        return Math.sqrt(a);
+        return  Math.sqrt((Math.pow(b.x,2) + Math.pow(b.y,2) + Math.pow(b.z,2) + Math.pow(b.a,2)));
     }
-    public double getX() {
+
+    public double angulo(IGVecR4 a, IGVecR4 b){
+        double r;
+        r = Math.acos(a.productoPunto(b)/(magnitud(a)*magnitud(b)));
+        return Math.toDegrees(r);
+    }
+
+    public double getX (){
         return x;
     }
 
-    public void setX(double x) {
+    public void setX (double x){
         this.x = x;
-    }    public double getY() {
+    }
+
+    public double getY (){
         return y;
     }
 
-    public void setY(double y) {
+    public void setY (double y){
         this.y = y;
     }
-    public double getZ() {
+
+    public double getZ (){
         return z;
     }
 
-    public void setZ(double z) {
+    public void setZ (double z) {
         this.z = z;
     }
-    public double getW() {
-        return w;
+
+    public double getA (){
+        return a;
     }
 
-    public void setW(double w) {
-        this.w = w;
+    public void setA(double a){
+        this.a = a;
     }
-
 }
+
